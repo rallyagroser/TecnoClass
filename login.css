@@ -1,19 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
 }
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #111;
-  width: 100%;
+  background: linear-gradient(to bottom, #151418, #1a1a1f);
   overflow: hidden;
 }
+
 .ring {
   position: relative;
   width: 500px;
@@ -22,12 +24,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .ring i {
   position: absolute;
   inset: 0;
   border: 2px solid #fff;
   transition: 0.5s;
 }
+
 .ring i:nth-child(1) {
   border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
   animation: animate 6s linear infinite;
@@ -40,75 +44,105 @@ body {
   border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
   animation: animate2 10s linear infinite;
 }
+
 .ring:hover i {
   border: 6px solid var(--clr);
   filter: drop-shadow(0 0 20px var(--clr));
 }
+
 @keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
+
 @keyframes animate2 {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
 }
+
 .login {
   position: absolute;
-  width: 300px;
-  height: 100%;
+  width: 320px;
+  background-color: rgba(21, 20, 24, 0.95);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+
+.login .logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.login .app-name {
+  color: #ffb800;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.login h2 {
+  font-size: 1.4em;
+  color: #fff;
+}
+
+.login form {
+  width: 100%;
+  display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.login h2 {
-  font-size: 2em;
-  color: #fff;
-}
-.login .inputBx {
-  position: relative;
-  width: 100%;
-}
-.login .inputBx input {
-  position: relative;
+
+.inputBx input {
   width: 100%;
   padding: 12px 20px;
   background: transparent;
   border: 2px solid #fff;
   border-radius: 40px;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #fff;
-  box-shadow: none;
   outline: none;
+  transition: 0.3s ease;
 }
-.login .inputBx input[type="submit"] {
-  width: 100%;
-  background: #3c3c3d;
-  background: linear-gradient(45deg, #151418, #ffb800);
+
+.inputBx input:focus {
+  border-color: #ffb800;
+  box-shadow: 0 0 10px #ffb80055;
+}
+
+.inputBx input[type="submit"] {
+  background: linear-gradient(45deg, #ffb800, #f78e05);
   border: none;
+  font-weight: 600;
   cursor: pointer;
 }
-.login .inputBx input::placeholder {
+
+.inputBx input[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 184, 0, 0.4);
+}
+
+.inputBx input::placeholder {
   color: rgba(255, 255, 255, 0.75);
 }
-.login .links {
-  position: relative;
+
+.links {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  justify-content: flex-end;
+  padding: 0 10px;
 }
-.login .links a {
-  color: #fff;
+
+.links a {
+  color: #ccc;
   text-decoration: none;
+  font-size: 0.9em;
+}
+
+.links a:hover {
+  text-decoration: underline;
 }

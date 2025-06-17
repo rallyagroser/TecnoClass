@@ -5,10 +5,7 @@
   <title>TecnoClass</title>
   <link rel="stylesheet" href="login.css">
 </head>
-<body style="background-color: #151418;">
-  <div style="position: absolute; top: 40px; left: 50px;">
-    <a href="inicio.html" style="color: white; text-decoration: none; font-family: 'Quicksand', sans-serif; font-size: 1em;">Regresar</a>
-  </div>
+<body>
 
   <div class="ring">
     <i style="--clr:#232696;"></i>
@@ -16,10 +13,13 @@
     <i style="--clr:#f8f1f1;"></i>
 
     <div class="login">
+      <img src="logo_pitutu2-removebg-preview.png" alt="TecnoClass Logo" class="logo">
+      <h1 class="app-name">TecnoClass</h1>
       <h2>Inicia Sesión</h2>
-      <form id="loginForm" style="width: 100%; display: flex; flex-direction: column; gap: 20px;">
+
+      <form id="loginForm">
         <div class="inputBx">
-          <input type="email" id="username" placeholder="Correo electrónico" required>
+          <input type="email" id="email" placeholder="Correo Electrónico" required>
         </div>
         <div class="inputBx">
           <input type="password" id="password" placeholder="Contraseña" required>
@@ -29,13 +29,31 @@
         </div>
         <div class="links">
           <a href="#">Olvidé la contraseña</a>
-          <a href="registro.html">Inscribirse</a>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Tu script principal debe ser de tipo 'module' -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+  
+  <script>
+    // TODO: Configura aquí tus credenciales de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyBrVGqx561JZal_11QPh-7l6MsF3UGgORg",
+      authDomain: "tecnoclass-b80e5.firebaseapp.com",
+      projectId: "tecnoclass-b80e5",
+      storageBucket: "tecnoclass-b80e5.firebasestorage.app",
+      messagingSenderId: "956700635223",
+      appId: "1:956700635223:web:aa8bcd9e8e3f99b6943312",
+      measurementId: "G-WJ26SZ5Y33"
+    };
+
+    // Inicializa Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
   <script src="login.js"></script>
 </body>
 </html>

@@ -18,7 +18,6 @@
       <circle class="circle-anim" cx="40" cy="35" r="6" stroke-width="2" />
       <circle class="circle-anim" cx="60" cy="65" r="6" stroke-width="2" />
       <circle cx="50" cy="50" r="10" stroke-width="3" fill="var(--purple3)" />
-    </svg>
   </div>
 
   <div class="form-container">
@@ -34,6 +33,13 @@
 
       <label for="confirmPassword">Confirmar Contraseña</label>
       <input type="password" id="confirmPassword" name="confirmPassword" placeholder="minimo seis caracteres" required minlength="6" />
+
+      <label for="rol">Rol</label>
+<select id="rol" name="rol" required>
+  <option value="">Selecciona un rol</option>
+  <option value="superadministrador">Superadministrador</option>
+  <option value="administrador">Administrador</option>
+</select>
 
       <button type="submit">Registrarse</button>
       <div style="position: absolute; top: 40px; left: 50px; color: #fff;"><a style="color: #fff;" type="button" href="login.html">Regresar</a>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Administrador</title>
+    <link rel="stylesheet" href="Super_Admin.css" />
+</head>
+<body>
+  <header class="encabezado">
+      <img src="logo.png" alt="Logo" class="logo"/>
+      <h1>Panel Administrador</h1>
+      <div class="iconos-usuario">
+        <img src="notificaciones.png" alt="Notificacion" class="icono"/>
+        <img src="perfil.png" alt="Perfil" class="icono" />
+      </div>
+  </header>
+  <main class="panel">
+    <section class="vista-general">
+        <h2>Vista General</h2>
+        <div class="metricas">
+        <div class="bloque">
+            <p>Alumnos asignados</p>
+            <h3>120</h3>
+        </div>
+        <div class="bloque">
+            <h3>Progreso Global</h3>
+            <h3 class="progreso">74%</h3>
+        </div>
+        </div>
+        
+        <div class="opciones">
+        <div class="opcion">
+            <h3>Crear / Gestionar Alumnos</h3>
+            <img src="gestion-usuarios.png" alt="Gestión Alumnos" height="60" />
+        </div>
+        <div class="opcion">
+        <h3>Subir Minijuego</h3>
+        </div>
+        <div class="opcion">
+        <h3>Foros / Chats</h3>
+        <img src="foros.png" alt="Foros" height="60" />
+        </div>
+        <div class="opcion">
+        <h3>Asignacion de tareas</h3>
+        <img src="reportes.png" alt="Tareas" height="60" />
+        </div>
+    </section>
+
+    <aside class="lateral"> 
+        <div class="opcion-lateral">
+            <h3>Soporte Interno</h3>
+            <img src="soporte.png" alt="Soporte" height="60" />
+    </div>
+    <div class="opcion-lateral">
+      <h3>Crear / Gestionar Aulas</h3>
+    </div>
+    </aside>
+  <!-- Sección de gestión de aulas (oculta al inicio) -->
+  <section id="seccion-aulas" style="display: none; padding: 20px; background-color: #2d2f36; border-radius: 10px; margin: 20px;">
+  <h2>Gestión de Aulas</h2>
+
+  <!-- Formulario para registrar nueva aula -->
+  <form id="formulario-aula" style="margin-bottom: 20px;">
+    <label>Nombre del aula:</label><br>
+    <input type="text" id="nombreAula" required><br><br>
+
+    <label>Grado:</label><br>
+    <input type="text" id="gradoAula" required><br><br>
+
+    <label>Sección:</label><br>
+    <input type="text" id="seccionAula" required><br><br>
+
+    <button type="submit">Guardar Aula</button>
+  </form>
+
+  <!-- Lista de aulas registradas -->
+  <div id="listaAulas">
+    <!-- Aquí se insertarán las aulas con JS -->
+  </div>
+</section>
+</main>
+  <footer></footer>
+  <script src="Administrador.js"></script>
+</body>
+</html>

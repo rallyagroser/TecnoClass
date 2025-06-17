@@ -1,0 +1,181 @@
+<!-- Super_Admin.html actualizado -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tecno Class - Super Admin</title>
+  <link rel="stylesheet" href="Super_Admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="encabezado">
+    <img src="logo_pitutu2-removebg-preview.png" alt="Logo" class="logo-toggle" onclick="toggleMenu()" />
+    <h1>Super Administrador</h1>
+    <div class="iconos">
+      <img src="notificacion.png" />
+      <img src="perfl.png" />
+    </div>
+  </header>
+
+  <div class="contenedor">
+    <nav class="menu-lateral oculto" id="menuLateral">
+      <button onclick="mostrarSeccion('usuarios'); cargarUsuarios();">🧑‍💼 Usuarios</button>
+      <button onclick="mostrarSeccion('contenido')">📂 Contenido</button>
+      <button onclick="mostrarSeccion('config')">⚙️ Configuración</button>
+      <button onclick="mostrarSeccion('reportes')">📊 Reportes</button>
+      <button onclick="mostrarSeccion('soporte')">📞 Soporte</button>
+    </nav>
+
+    <main class="zona-principal">
+      <section id="usuarios" class="seccion">
+        <div class="gestion-header">
+          <h2>Gestión de Usuarios</h2>
+          <button id="btnAnadirUsuario" class="btn-primario">Añadir Usuario</button>
+        </div>
+        <div class="tabla-container">
+          <table id="tablaUsuarios">
+            <thead>
+              <tr>
+                <th>Nombre de Usuario</th>
+                <th>Correo Electrónico</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="contenido" class="seccion">
+        <h2>Gestión de Contenido</h2>
+        <p>Desde aquí puedes subir, editar o eliminar recursos educativos como minijuegos, videos, PDFs, guías, etc.</p>
+        <button class="btn-primario">📤 Subir Nuevo Recurso</button>
+
+        <div class="tabla-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Fecha de Subida</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ejemplo 1</td>
+                <td>PDF</td>
+                <td>01/07/2025</td>
+                <td><button>Ver</button> <button>Eliminar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="config" class="seccion">
+        <h2>Configuración General</h2>
+        <p>Ajusta las preferencias del sistema, interfaz y notificaciones.</p>
+
+        <form class="formulario-generico">
+          <label>Notificaciones por correo:
+            <select>
+              <option>Activadas</option>
+              <option>Desactivadas</option>
+            </select>
+          </label>
+
+          <label>Tema del sistema:
+            <select>
+              <option>Claro</option>
+              <option>Oscuro</option>
+            </select>
+          </label>
+
+          <button class="btn-primario">💾 Guardar Cambios</button>
+        </form>
+      </section>
+
+      <section id="reportes" class="seccion">
+        <h2>Reportes Generales</h2>
+        <p>Consulta el resumen de uso del sistema, usuarios activos, contenido más utilizado y más.</p>
+
+        <div class="tarjetas-reportes">
+          <div class="tarjeta-reporte">
+            <h3>👥 Usuarios Activos</h3>
+            <p>125</p>
+          </div>
+          <div class="tarjeta-reporte">
+            <h3>📚 Recursos Subidos</h3>
+            <p>37</p>
+          </div>
+          <div class="tarjeta-reporte">
+            <h3>📈 Sesiones en el mes</h3>
+            <p>564</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="soporte" class="seccion">
+        <h2>Soporte Interno</h2>
+        <p>¿Tienes un problema técnico o sugerencia? Envíanos tu reporte aquí.</p>
+
+        <form class="formulario-generico">
+          <label for="asunto">Asunto:</label>
+          <input type="text" id="asunto" placeholder="Ej: No puedo subir archivos" />
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="4" placeholder="Describe el problema o sugerencia..."></textarea>
+
+          <button class="btn-primario">📨 Enviar</button>
+        </form>
+      </section>
+
+      <section id="default" class="seccion activa">
+        <h2>Bienvenido</h2>
+        <p>Selecciona una opción del menú haciendo clic en el logo.</p>
+      </section>
+    </main>
+  </div>
+
+  <div id="modalUsuario" class="modal">
+    <div class="modal-contenido gamer-modal">
+      <span class="cerrar-modal">&times;</span>
+      <h3 id="modalTitulo" class="modal-gamer-title">Registro de Usuario</h3>
+      <div class="form-container gamer-form">
+        <form id="formUsuario" novalidate>
+          <input type="hidden" id="usuarioId" />
+
+          <label for="username">Nombre de usuario</label>
+          <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required minlength="3" autocomplete="off" />
+
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu-correo@ejemplo.com" required autocomplete="off" />
+
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="mínimo seis caracteres" required minlength="6" />
+
+          <label for="confirmPassword">Confirmar Contraseña</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="mínimo seis caracteres" required minlength="6" />
+
+          <label for="rol">Rol</label>
+          <select id="rol" name="rol" required>
+            <option value="">Selecciona un rol</option>
+            <option value="superadministrador">Superadministrador</option>
+            <option value="administrador">Administrador</option>
+          </select>
+
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="Super_Admin.js"></script>
+</body>
+</html>
