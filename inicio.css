@@ -1,0 +1,206 @@
+  /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #252529;
+    background: linear-gradient(135deg, #2a2a2b);
+    color: #333333;
+    min-height: 100vh;
+  }
+
+  /* Navbar */
+  nav {
+    box-shadow: 0 4px 15px (0,0,0,0.5);
+    background-color: #151418;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(66, 66, 66, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav .menu {
+    display: flex;
+    gap: 25px;
+  }
+
+  nav .menu a {
+    color: #ffb800;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav .menu a:hover {
+    background-color: #3b3a3b;
+    color: white;
+  }
+
+  nav .login {
+    background-color: #ffb800;
+    padding: 8px 18px;
+    color: white;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  nav .login:hover {
+    background-color: #3b3a3b;
+  }
+
+  /* Main container with white background */
+  .container {
+    max-width: 700px;
+    background: #ffffff;
+    margin: 80px auto 40px;
+    padding: 70px 30px 80px; /* reduced vertical padding */
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.6); /* bright yellow shadow */
+    color: #333333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Logo Section inside container */
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: center;
+    user-select: none;
+  }
+
+  .logo-section img.logo {
+    width: 70px;                        
+    height: 70px;                        
+    object-fit: contain;                        
+    border-radius: 12px;                        
+    background-color: #ffec70;                        
+    padding: 6px;                        
+    box-shadow: 0 0 15px #f5e663;                        
+  }
+
+  .logo-section .logo-text {
+    font-size: 3rem;
+    font-weight: 900;
+    color:  #ffb800; /* Morado */
+    text-shadow: 0 0 10px #151418, 0 0 20px #0b0a0f;
+    font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+  }
+
+  /* Carousel Styles */
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+  }
+
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+  }
+
+  .carousel-images img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* Carousel buttons */
+  button.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 215, 0, 0.7);
+    border: none;
+    color: #151418;
+    font-size: 2rem;
+    padding: 8px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    box-shadow: 0 0 10px #fff065;
+  }
+
+  button.carousel-btn:hover {
+    background-color: #fff065;
+  }
+
+  #prevBtn {
+    left: 15px;
+  }
+
+  #nextBtn {
+    right: 15px;
+  }
+
+  /* Call to action button */
+  button.cta-button {
+    background-color: #ffdb00;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    color: #3b3a3b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 15px rgba(255, 215, 0, 0.7);
+  }
+
+  button.cta-button:hover {
+    background-color: #fff065;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    nav {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px 20px;
+    }
+    nav .menu {
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav .login {
+      padding: 8px 25px;
+      font-size: 1.1rem;
+    }
+    .container {
+      margin: 100px 15px 40px;
+      max-width: 90vw;
+      padding: 60px 20px 70px; /* scaled for smaller screens */
+    }
+    .logo-section {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .logo-section img.logo {
+      width: 90px;
+      height: 90px;
+    }
+    .logo-section .logo-text {
+      font-size: 2.5rem;
+    }
+  }

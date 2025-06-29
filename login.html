@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TecnoClass</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body style="background-color: #151418;">
+  <div style="position: absolute; top: 40px; left: 50px;">
+    <a href="inicio.html" style="color: white; text-decoration: none; font-family: 'Quicksand', sans-serif; font-size: 1em;">Regresar</a>
+  </div>
+
+  <div class="ring">
+    <i style="--clr:#232696;"></i>
+    <i style="--clr:#f78e05;"></i>
+    <i style="--clr:#f8f1f1;"></i>
+
+    <div class="login">
+      <h2>Inicia Sesión</h2>
+      <form id="loginForm" style="width: 100%; display: flex; flex-direction: column; gap: 20px;">
+        <div class="inputBx">
+          <input type="email" id="username" placeholder="Correo electrónico" required>
+        </div>
+        <div class="inputBx">
+          <input type="password" id="password" placeholder="Contraseña" required>
+        </div>
+        <div class="inputBx">
+          <input type="submit" value="Iniciar sesión">
+        </div>
+        <div class="links">
+          <a href="#">Olvidé la contraseña</a>
+          <a href="registro.html">Inscribirse</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tu script principal debe ser de tipo 'module' -->
+  <script type="module" src="login.js"></script>
+</body>
+</html>
